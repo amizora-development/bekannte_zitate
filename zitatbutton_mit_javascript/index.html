@@ -1,0 +1,86 @@
+<!Doctype html>
+<html lang="de-DE">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zitate - Array Funktionen mit JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+<!--<script src="zitate.js" defer></script>-->
+</head>
+<body>
+    <header class="page-header" >
+        <h1>Bekannte Zitate</h1>
+    </header>
+    <div class="page-content">
+        <button id="next">Nächstes Zitat</button>
+        <p id="quote">Das Leben besteht hauptsächlich darin, dass man mit dem Unvorhergesehenen fertig werden muss.</p>
+        <p id="quoteFrom">John Steinbeck</p>
+
+    </div>
+                                            <!-- ================== -->
+                                            <!-- == mit 1 Array ==  -->
+                                            <!-- ================== -->
+    <script type="text/javascript">
+        var quotesArr = [
+            ["Das Leben besteht hauptsächlich darin, dass man mit dem Unvorhergesehenen fertig werden muss.", "John Steinbeck"],
+            ["Das Problem zu erkennen ist wichtiger als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung.", "Albert Einstein"],
+            ["Die meisten Führungskräfte zögern, ihre Leute mit dem Ball laufen zu lassen, aber es ist erstaunlich, wie schnell ein informierter und motivierter Mensch laufen kann.", "Lee Iacocca"],
+            ["Eine Investition in Wissen bringt immer noch die besten Zinsen.", "Benjamin Franklin"],
+            ["Der Humor ist der Regenschirm der Weisen.", "Erich Kästner"],
+            ["Eine positive Einstellung zu lösbaren Problemen ist bereits der halbe Erfolg.", "Ernst Ferstl"],
+            ["Man kann einige Menschen die ganze Zeit und alle Menschen eine Zeit lang zum Narren halten; aber man kann nicht alle Menschen allezeit zum Narren halten.", "Abraham Lincoln"],
+            ["Es ist kein Drama, wenn das Projekt nicht nach Plan läuft. Es ist ein Drama, wenn der Projektmanager nichts davon weiß.", "Peter Hobbs"],
+            ["Wo Liebe wächst, gedeiht Leben – wo Hass aufkommt droht Untergang.", "Mahatma Gandhi"],
+            ["Es gibt kaum ein beglückenderes Gefühl, als zu spüren, dass man für andere Menschen etwas sein kann.", "Dietrich Bonhoeffer"]
+            ["Es ist nicht genug zu wissen, man muss es auch anwenden. Es ist nicht genug zu wollen, man muss es auch tun.", "Johann Wolfgang von Goethe"]
+        ];
+
+        document.getElementById("next").onclick = function() {
+            randomize();
+        }
+
+        function randomize() {
+            var range = quotesArr.length;
+            var randomIndex = Math.floor(Math.random() * range);
+            var quote = quotesArr[randomIndex][0];
+            var quoteFrom = quotesArr[randomIndex][1];
+            document.getElementById('quote').innerHTML = quote;
+            document.getElementById('quoteFrom').innerHTML = quoteFrom;
+        }
+    </script>
+
+
+                                            <!-- ================== -->
+                                            <!-- == mit 2 Arrays == -->
+                                            <!-- ================== -->
+                        
+    <!--<script type="text/javascript">
+        var quotesArr = ["Das Leben besteht hauptsächlich darin, dass man mit dem Unvorhergesehenen fertig werden muss.",
+        "Das Problem zu erkennen ist wichtiger als die Lösung zu erkennen, denn die genaue Darstellung des Problems führt zur Lösung.",
+        "Die meisten Führungskräfte zögern, ihre Leute mit dem Ball laufen zu lassen, aber es ist erstaunlich, wie schnell ein informierter und motivierter Mensch laufen kann.",
+        "Eine Investition in Wissen bringt immer noch die besten Zinsen.", "Der Humor ist der Regenschirm der Weisen.",
+         Eine positive Einstellung zu lösbaren Problemen ist bereits der halbe Erfolg.",
+        "Man kann einige Menschen die ganze Zeit und alle Menschen eine Zeit lang zum Narren halten; aber man kann nicht alle
+        Menschen allezeit zum Narren halten.", "Wo Liebe wächst, gedeiht Leben – wo Hass aufkommt droht Untergang.",
+        "Es ist kein Drama, wenn das Projekt nicht nach Plan läuft. Es ist ein Drama, wenn der Projektmanager nichts davon weiß.",
+        "Es gibt kaum ein beglückenderes Gefühl, als zu spüren, dass man für andere Menschen etwas sein kann.",
+        "Es ist nicht genug zu wissen, man muss es auch anwenden. Es ist nicht genug zu wollen, man muss es auch tun."];        
+        var quotesFrom = ["John Steinbeck","Albert Einstein",
+        "Lee Iacocca", "Benjamin Franklin","Erich Kästner","Ernst Ferstl","Abraham Lincoln","Peter Hobbs","Mahatma Gandhi","Dietrich Bonhoeffer","Johann Wolfgang von Goethe"];       
+
+        document.getElementById("next").onclick = function(){
+           randomize();
+        }
+
+        function randomize() {
+            var range = quotesArr.length;
+            var randomIndex = Math.floor(Math.random() * range);
+            var quote = quotesArr[randomIndex];
+            var quoteFrom = quotesFrom[randomIndex];
+            
+            document.getElementById('quote').innerHTML = quote; 
+            document.getElementById('quoteFrom').innerHTML = quoteFrom;
+        }
+    </script> --> 
+</body>
+</html>
